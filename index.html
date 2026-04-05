@@ -63,25 +63,28 @@
     }
 
     .profile-content {
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 28px;
-      align-items: start;
+      display: block;
+    }
+
+    .left-column {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
     }
 
     .preview-image {
       width: 100%;
+      max-width: 320px;
       display: block;
       border: 1px solid var(--line);
       background: #ddd;
     }
 
-    .button-group {
+    .button-row {
       display: flex;
-      flex-direction: column;
       gap: 12px;
-      align-items: flex-start;
-      padding-top: 8px;
+      flex-wrap: wrap;
     }
 
     .copy-btn {
@@ -99,7 +102,6 @@
     }
 
     .status {
-      margin-top: 14px;
       color: var(--muted);
       font-size: 0.9rem;
       min-height: 1.2em;
@@ -116,8 +118,9 @@
         padding: 28px 18px 36px;
       }
 
-      .profile-content {
-        grid-template-columns: 1fr;
+      .button-row {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
@@ -131,16 +134,14 @@
       <h2>Vertical Profile</h2>
       <div class="profile-box">
         <div class="profile-content">
-          <div>
+          <div class="left-column">
             <img
               class="preview-image"
               src="images/vertical-preview.png"
               alt="Vertical profile preview"
             />
-          </div>
 
-          <div>
-            <div class="button-group">
+            <div class="button-row">
               <button
                 class="copy-btn"
                 onclick="copyImportFromFile('imports/vertical-danders.txt', this, 'vertical-status')"
@@ -168,16 +169,14 @@
       <h2>Horizontal Profile</h2>
       <div class="profile-box">
         <div class="profile-content">
-          <div>
+          <div class="left-column">
             <img
               class="preview-image"
               src="images/horizontal-preview.png"
               alt="Horizontal profile preview"
             />
-          </div>
 
-          <div>
-            <div class="button-group">
+            <div class="button-row">
               <button
                 class="copy-btn"
                 onclick="copyImportFromFile('imports/horizontal-danders.txt', this, 'horizontal-status')"
